@@ -1,0 +1,32 @@
+<div>
+
+  <PullToRefresh [direction]="state.direction"
+                 [(ngModel)]="state.refreshState"
+                 [endReachedRefresh]="state.endReachedRefresh"
+                 (onRefresh)="pullToRefresh($event)"
+  >
+    <ng-container *ngFor="let article of rows">
+
+      <div class="hn-card">
+
+        <div class="hn-card-title">
+          <app-article-badge [article]="article"></app-article-badge>
+          {{article?.title}}
+        </div>
+        <div class="hn-card-footer">
+          <div style="display: flex;align-items: center">
+            <img style="width: 30px;border-radius: 4px" [src]="article?.author?.avatar_url" alt="">
+            <span style="margin-left: 4px;opacity: 0.8">{{article?.author?.loginname}}</span>
+            <span style="margin-left: 4px;opacity: 0.8">{{article?.reply_count}}评论</span>
+          </div>
+          <span style="margin-left: 4px;opacity: 0.8">{{article?.create_at | date:'yyyy-MM-dd'}}</span>
+        </div>
+      </div>
+    </ng-container>
+
+  </PullToRefresh>
+  <ng-template #loading>
+    <Icon type="loading"></Icon>
+  </ng-template>
+
+</div>

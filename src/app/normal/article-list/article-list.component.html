@@ -1,0 +1,63 @@
+<Tabs [useOnPan]="true"
+      [swipeable]="true"
+      [activeTab]="index"
+      [page]="5"
+      [tabBarActiveTextColor]="'#1890ff'"
+      (onChange)="onChange($event)"
+      (onTabClick)="onTabClick($event)"
+>
+  <TabPane class="hn-tab-pane" title="全部"
+  >
+
+    <app-article-list-inner></app-article-list-inner>
+  </TabPane>
+
+  <TabPane class="hn-tab-pane" title="精华"
+  >
+    <app-article-list-inner [tab]="'good'"></app-article-list-inner>
+  </TabPane>
+
+  <TabPane class="hn-tab-pane" [title]="'分享'"
+  >
+
+    <app-article-list-inner [tab]="'share'"></app-article-list-inner>
+  </TabPane>
+
+  <TabPane class="hn-tab-pane" title="问答"
+  >
+    <app-article-list-inner [tab]="'ask'"></app-article-list-inner>
+  </TabPane>
+
+  <TabPane class="hn-tab-pane" title="招聘"
+  >
+    <app-article-list-inner [tab]="'job'"></app-article-list-inner>
+  </TabPane>
+
+  <!--<TabPane [title]="titleTemplate"-->
+  <!--&gt;-->
+  <!--<ng-template #titleTemplate>-->
+  <!--<Badge [text]="'今日(20)'">-->
+  <!--<div>Second Tab</div>-->
+  <!--</Badge>-->
+  <!--</ng-template>-->
+  <!--<ng-container *ngFor="let article of tabsData.all">-->
+
+  <!--<div class="hn-card">-->
+
+  <!--<div class="hn-card-title">-->
+  <!--<app-article-badge [article]="article"></app-article-badge>-->
+  <!--{{article?.title}}-->
+  <!--</div>-->
+  <!--<div class="hn-card-footer">-->
+  <!--<div style="display: flex;align-items: center">-->
+  <!--<img style="width: 30px;border-radius: 4px" [src]="article?.author?.avatar_url" alt="">-->
+  <!--<span style="margin-left: 4px;opacity: 0.8">{{article?.author?.loginname}}</span>-->
+  <!--<span style="margin-left: 4px;opacity: 0.8">{{article?.reply_count}}评论</span>-->
+  <!--</div>-->
+  <!--<span style="margin-left: 4px;opacity: 0.8">{{article?.create_at | date:'yyyy-MM-dd'}}</span>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</ng-container>-->
+  <!--</TabPane>-->
+
+</Tabs>

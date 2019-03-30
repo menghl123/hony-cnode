@@ -1,0 +1,26 @@
+/deep/ .am-badge {
+  text-align: right;
+}
+
+.hn-card {
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 8px 6px 16px;
+  .hn-card-title {
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 22px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .hn-card-footer {
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+  }
+}
